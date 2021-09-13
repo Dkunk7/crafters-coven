@@ -34,16 +34,19 @@ const noteData = [
     {
         title: `home base!`,
         content: `0, 0, 0`,
+        is_coordinate: true,
         user_id: 1
     },
     {
         title: `scary nether stuff`,
         content: `84, 56, -200`,
+        is_coordinate: true,
         user_id: 5
     },
     {
         title: `my coordinate`,
         content: `1800, 44, 485`,
+        is_coordinate: true,
         user_id: 2
     },
 ]

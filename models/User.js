@@ -40,7 +40,7 @@ User.init(
             }
         },
         is_admin: {
-            tpye: DataTypes.BOOLEAN,
+            type: DataTypes.BOOLEAN,
             allowNull: false,
             defaultValue: false
         }
