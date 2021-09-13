@@ -2,7 +2,6 @@ const { Model, DataTypes } = require(`sequelize`);
 const bcrypt = require(`bcrypt`);
 
 const sequelize = require(`../config/connection`);
-const { Hooks } = require("sequelize/types/lib/hooks");
 
 class User extends Model {
     checkPassword(loginPw) {
@@ -25,14 +24,14 @@ User.init(
             unique: true
         },
         // Probably don't need an email for something small scale like this
-        // email: {
-        //     type: DataTypes.STRING,
-        //     allowNull: false,
-        //     unique: true,
-        //     validate: {
-        //         isEmail: true
-        //     }
-        // },
+        email: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            unique: true,
+            validate: {
+                isEmail: true
+            }
+        },
         password: {
             type: DataTypes.STRING,
             allowNull: false,
