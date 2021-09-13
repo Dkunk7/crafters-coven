@@ -33,34 +33,6 @@ router.get(`/:id`, (req, res) => {
     });
 });
 
-// GET all coordinate comments (/api/comments/coordinates) <-- Maybe change /note?
-router.get(`/coordinates`, (req, res) => {
-    Comment.findAll({
-        where: {
-            is_coordinate: true
-        }
-    })
-    .then(dbCommentData => res.json(dbCommentData))
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
-});
-
-// GET all note comments (/api/comments/notes)
-router.get(`/notes`, (req, res) => {
-    Comment.findAll({
-        where: {
-            is_coordinate: false
-        }
-    })
-    .then(dbCommentData => res.json(dbCommentData))
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
-});
-
 // POST - create comment (/api/comments)
 router.post(`/`, (req, res) => {
     if (req.session) {

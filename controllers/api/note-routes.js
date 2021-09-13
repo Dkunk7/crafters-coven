@@ -65,6 +65,34 @@ router.get(`/:id`, (req, res) => {
     });
 });
 
+// GET all coordinate notes (/api/notes/coordinates) <-- Maybe change /note?
+router.get(`/coordinates`, (req, res) => {
+    Note.findAll({
+        where: {
+            is_coordinate: true
+        }
+    })
+    .then(dbNoteData => res.json(dbNoteData))
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
+
+// GET all note notes (/api/notes/notes)
+router.get(`/notes`, (req, res) => {
+    Note.findAll({
+        where: {
+            is_coordinate: false
+        }
+    })
+    .then(dbNoteData => res.json(dbNoteData))
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
+
 // POST - create note (/api/notes)
 router.post(`/`, (req, res) => {
     Note.create({

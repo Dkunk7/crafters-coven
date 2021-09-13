@@ -35,5 +35,5 @@ app.use(routes); // This exists --------
 
 // turn on connection to db and server
 sequelize.sync({ force: false }).then(() => {
-    app.listen(PORT, () => console.log("Now listening for the opening whistle."));
+    app.listen(PORT, () => console.log("Now listening for the sound of breaking blocks."));
   });
