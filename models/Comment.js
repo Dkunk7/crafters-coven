@@ -10,7 +10,7 @@ Comment.init(
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
-            autoIncrement: truncate
+            autoIncrement: true
         },
         comment_text: {
             type: DataTypes.STRING,
@@ -32,7 +32,7 @@ Comment.init(
             allowNull: false,
             references: {
                 model: `note`,
-                key: `id`
+                key: `id`,
             }
         }
     },
