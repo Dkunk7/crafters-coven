@@ -38,6 +38,11 @@ User.init(
             validate: {
                 len: [6]
             }
+        },
+        is_admin: {
+            tpye: DataTypes.BOOLEAN,
+            allowNull: false,
+            defaultValue: false
         }
     },
     {
