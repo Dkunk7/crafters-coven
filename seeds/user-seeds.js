@@ -4,7 +4,8 @@ const userData = [
     {
         username: `Drogar`,
         email: 'drogar@email.com',
-        password: `pswd123`
+        password: `pswd123`,
+        is_admin: true
     },
     {
         username: `Kalibu`,
