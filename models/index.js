@@ -1,7 +1,10 @@
 // import models when they're made
+const User = require(`./User`);
+const Note = require(`./Note`);
+const Comment = require(`./Comment`);
 
 
 // create associations (fuck those btw)
 
 
-module.exports = { /* Models go here */}
+module.exports = { User, Note, Comment };
