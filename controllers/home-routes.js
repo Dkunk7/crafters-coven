@@ -17,8 +17,9 @@ router.get(`/`, (req, res) => {
     // If I can connect this to in game user info, I'd probably show
     // inventory on the main page. Otherwise maybe just do notes?
 
-    // NOTE: Dashboard = Inventory?, Notes, Coordinates, Map?
+    // NOTE: Nav bar = Inventory?, Notes, Coordinates, Map?
     // You can make your inventory private
+    // If those 4 things are on the navbar, what's on the page itself?
 });
 
 // if you're logged in, redirect to main page, otherwise go to login
