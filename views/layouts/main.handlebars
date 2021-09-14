@@ -1,0 +1,41 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Volley-All</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    {{!-- <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> --}}
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>
+          <a href="/">Crafter's Coven</a>
+        </h1>
+        <nav>
+          {{#if loggedIn}}
+            <a href="/"><button id="dashboard" >dashboard</button></a>
+            <button id="logout">logout</button>
+          {{else}}
+            <a href="/login">login</a>
+          {{/if}}
+        </nav>
+      </header>
+      <main>
+        {{{body}}}
+      </main>
+      <footer>
+        
+      </footer>
+    </div>
+    {{!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script> --}}
+      {{!-- AOS.init(); <-- This line goes in the next script tag --}}
+    <script>
+    </script>
+    {{#if loggedIn}}
+      <script src="/javascript/logout.js"></script>
+    {{/if}}
+  </body>
+</html>
