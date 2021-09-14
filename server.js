@@ -13,7 +13,7 @@ const hbs = exphbs.create();
 const SequelizeStore = require(`connect-session-sequelize`)(session.Store);
 
 const sess = {
-    secret: 'CHANGE THIS AT SOME POINT to process.env.PORT and, ya know, do that.',
+    secret: 'CHANGE THIS AT SOME POINT to process.env.DB_SECRET and, ya know, do that.',
     cookie: {},
     resave: false,
     saveUninitialized: true,
