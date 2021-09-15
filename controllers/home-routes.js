@@ -10,6 +10,7 @@ router.get(`/`, (req, res) => {
         res.redirect(`/login`);
         return;
     }
+    
 
     // render dashboard, but what goes on the dashboard?
     // I think I want notes and coordinates to be two separate pages,
