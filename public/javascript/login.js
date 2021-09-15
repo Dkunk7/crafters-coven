@@ -2,9 +2,9 @@
     event.preventDefault();
 
     // Double check these HTML values
-    const username = document.querySelector(`#username-signup`).nodeValue.trim();
-    const email = document.querySelector(`#email-signup`).nodeValue.trim();
-    const password = document.querySelector(`#password-signup`).nodeValue.trim();
+    const username = document.querySelector(`#username-signup`).value.trim();
+    const email = document.querySelector(`#email-signup`).value.trim();
+    const password = document.querySelector(`#password-signup`).value.trim();
 
     if (username && email && password) {
         const response = await fetch(`/api/users`, {
@@ -50,3 +50,6 @@ async function loginFormHandler(event) {
         }
     }
 }
+
+document.querySelector(`.login-form`).addEventListener(`submit`, loginFormHandler);
+document.querySelector(`.signup-form`).addEventListener(`submit`, signupFormHandler);
