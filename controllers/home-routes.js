@@ -14,24 +14,27 @@ router.get(`/`, (req, res) => {
     // It's probably unnecessary anyway bc the previous if statement
     // makes you login before continuing this get route
 
-    // User.findOne({
-    //     where: {
-    //         id: req.session.user_id
-    //     }
-    // })
-    // .then(userInfo => {
-    //     // console.log(userInfo);
-    //     // console.log(req.session)
-    Comment.findAll({
+    User.findOne({
         where: {
-            user_id: req.session.user_id//userInfo.dataValues.id
+            id: req.session.user_id
         }
     })
-        // console.log(userInfo.dataValues.id)
-    //})
-    .then(commentInfo => {
-        console.log(commentInfo)
+    .then(userData => {
+        Comment.findAll({
+            where: {
+                user_id: userData.dataValues.id
+            }
+        })
+        // console.log(userData)
+        .then(commentData => {
+            res.render(`dashboard`, {
+                is_admin: userData.dataValues.is_admin,
+                user: userData,
+                comments: commentData
+            })
+        })
     })
+    
     
 
     // Render dashboard, but what goes on the dashboard?
