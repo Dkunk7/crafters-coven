@@ -10,9 +10,31 @@ router.get(`/`, (req, res) => {
         res.redirect(`/login`);
         return;
     }
+    // The Comment.findAll works if I don't use this User.findOne.
+    // It's probably unnecessary anyway bc the previous if statement
+    // makes you login before continuing this get route
+
+    // User.findOne({
+    //     where: {
+    //         id: req.session.user_id
+    //     }
+    // })
+    // .then(userInfo => {
+    //     // console.log(userInfo);
+    //     // console.log(req.session)
+    Comment.findAll({
+        where: {
+            user_id: req.session.user_id//userInfo.dataValues.id
+        }
+    })
+        // console.log(userInfo.dataValues.id)
+    //})
+    .then(commentInfo => {
+        console.log(commentInfo)
+    })
     
 
-    // render dashboard, but what goes on the dashboard?
+    // Render dashboard, but what goes on the dashboard?
     // I think I want notes and coordinates to be two separate pages,
     // which means I dont want to display either of them on the dashboard.
     // If I can connect this to in game user info, I'd probably show
