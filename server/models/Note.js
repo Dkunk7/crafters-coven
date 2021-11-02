@@ -9,12 +9,14 @@ const noteSchema = new Schema(
             required: true,
             trim: true
         },
-        content: {
+        noteContent: {
             type: String,
             required: true,
+            minlength: 1,
+            maxlength: 500, // maybe adjust this?
             trim: true
         },
-        is_coordinate: {
+        isCoordinate: {
             type: Boolean,
             default: false
         },
@@ -31,7 +33,7 @@ const noteSchema = new Schema(
     },
     {
         toJSON: {
-            getters: true // I think this is needed to use the virtual below
+            getters: true // I think this is needed to use the virtual below? And for the get above
         }
     }
 );
