@@ -23,7 +23,14 @@ const userSchema = new Schema(
         isAdmin: {
             type: Boolean,
             default: false
-        }
+        },
+        notes: [ // Check that this works right. I don't remember it well
+            {
+                type: Schema.Types.ObjectId,
+                ref: 'Note'
+            }
+        ],
+
     },
     {
         toJSON: {
