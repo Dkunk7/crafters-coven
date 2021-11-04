@@ -22,7 +22,7 @@ export const QUERY_NOTES = gql`
 
 export const QUERY_NOTE = gql`
     query note($id: ID!) {
-        thought(_id: $id) {
+        note(_id: $id) {
             _id
             title
             noteContent

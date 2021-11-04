@@ -51,7 +51,7 @@ const resolvers = {
                 throw new AuthenticationError('Incorrect credentials');
             }
 
-            const correctPass = await user.isCorrectPassowrd(password); // this is defined in the User model
+            const correctPass = await user.isCorrectPassword(password); // this is defined in the User model
 
             if (!correctPass) {
                 throw new AuthenticationError('Incorrect credentials');
@@ -61,6 +61,7 @@ const resolvers = {
             return { token, user };
         },
         addNote: async (parent, args, context) => { // check all this junk later
+            console.log(context.user)
             if (context.user) {
                 const note = await Note.create({ ...args, username: context.user.username });
 

@@ -38,7 +38,7 @@ const typeDefs = gql`
         login(email: String!, password: String!): Auth # not sure how this works; not set up yet
         addUser(username: String!, email: String!, password: String!): Auth
         addNote(title: String!, noteContent: String!, isCoordinate: Boolean): Note # isCoordinate is not required; false by default
-        addComment(noteId: ID!, commentContent: String!): Thought # This is performed on thought? Also noteId doesn't exist anywhere AS noteId. How does this work? *Referenced deep-thoughts
+        addComment(noteId: ID!, commentContent: String!): Note # This is performed on note? Also noteId doesn't exist anywhere AS noteId. How does this work? *Referenced deep-thoughts
     }
 
     type Auth {
