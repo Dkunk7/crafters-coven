@@ -33,6 +33,7 @@ const noteSchema = new Schema(
     },
     {
         toJSON: {
+            virtuals: true,
             getters: true // I think this is needed to use the virtual below? And for the get above
         }
     }

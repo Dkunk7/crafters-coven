@@ -6,6 +6,7 @@ const typeDefs = gql`
         username: String
         email: String
         isAdmin: Boolean  # is this necessary to validate admin privelages?
+        notes: [Note]
     }
 
     type Note {
