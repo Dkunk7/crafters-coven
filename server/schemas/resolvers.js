@@ -89,6 +89,10 @@ const resolvers = {
 
             throw new AuthenticationError('You need to be logged in to post a comment!');
         },
+        // update note
+        // update comment?
+        // delete note
+        // delete comment
     }
 };
 
