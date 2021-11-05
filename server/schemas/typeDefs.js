@@ -36,7 +36,7 @@ const typeDefs = gql`
     }
 
     type Mutation {
-        login(email: String!, password: String!): Auth # not sure how this works; not set up yet
+        login(email: String!, password: String!): Auth 
         addUser(username: String!, email: String!, password: String!): Auth
         addNote(title: String!, noteContent: String!, isCoordinate: Boolean): Note # isCoordinate is not required; false by default
         addComment(noteId: ID!, commentContent: String!): Note # This is performed on note? Also noteId doesn't exist anywhere AS noteId. How does this work? *Referenced deep-thoughts

@@ -15,6 +15,8 @@ const startServer = async () => {
         typeDefs,
         resolvers,
         context: authMiddleware
+        // context is automatically passed to all resolvers - use it where you need authorization
+        // context is also updated with every new request
     });
 
     // starts the apollo server
