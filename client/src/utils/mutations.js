@@ -46,6 +46,7 @@ export const ADD_COMMENT = gql`
         addComment(noteId: $noteId, commentContent: $commentContent) { # is the stuff below correct?
             _id
             commentContent
+            createdAt
             comments {
                 _id
                 commentContent
@@ -54,4 +55,29 @@ export const ADD_COMMENT = gql`
             }
         }
     }
+`;
+
+export const UPDATE_NOTE = gql`
+    mutation updateNote($noteId: ID!, $title: String!, $noteContent: String!) { # TEST THIS
+        addNote(noteId: $noteId, title: $title, noteContent: $noteContent) {
+            _id
+            title
+            isCoordinate
+            createdAt
+            noteContent
+            commentCount
+        }
+    }
+`;
+
+export const UPDATE_COMMENT = gql`
+    mutation
+`;
+
+export const DELETE_NOTE = gql`
+    mutation
+`;
+
+export const DELETE_COMMENT = gql`
+    mutation
 `;

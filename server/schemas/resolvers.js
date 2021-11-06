@@ -87,9 +87,18 @@ const resolvers = {
                 return updatedNote;
             }
 
-            throw new AuthenticationError('You need to be logged in to post a comment!');
+            throw new AuthenticationError('You need to be logged in to comment!');
         },
-        // update note
+        updateNote: async (parent, args, context) => { // Really winging it on this one, but it seems to work!
+            // args contains noteId, title, noteContent --> Id needed to find, and title and content are the only things that can be updated
+            if (context.user) {
+                const updatedNote = await Note.updateOne({ _id: args.noteId }, args);
+
+                return updatedNote;
+            }
+
+            throw new AuthenticationError('You need to be logged in to edit notes!');
+        }
         // update comment?
         // delete note
         // delete comment

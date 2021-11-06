@@ -40,7 +40,7 @@ const typeDefs = gql`
         addUser(username: String!, email: String!, password: String!): Auth
         addNote(title: String!, noteContent: String!, isCoordinate: Boolean): Note # isCoordinate is not required; false by default
         addComment(noteId: ID!, commentContent: String!): Note # This is performed on note? Also noteId doesn't exist anywhere AS noteId. How does this work? *Referenced deep-thoughts
-        # update note
+        updateNote(noteId: ID!, title: String!, noteContent: String!): Note # If title/noteContent are required, make it so it takes the existing value if it's unedited
         # update comment?
         # delete note
         # delete comment
